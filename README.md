@@ -12,9 +12,10 @@ Sebuah vCard digital yang interaktif dan dinamis untuk EPBOX ENGINEERING, diranc
 - **Floating Animations**: Logo dan badge bergerak halus
 
 ### 📱 Interaktivitas
-- **Click to Call**: Klik nomor telepon untuk langsung menelepon
+- **Click to WhatsApp**: Klik nomor telepon untuk langsung WhatsApp
 - **Click to Email**: Klik email untuk membuka aplikasi email
 - **Click to Map**: Klik alamat untuk membuka Google Maps
+- **Click to Website**: Klik website untuk membuka LinkedIn
 - **Copy to Clipboard**: Klik kanan untuk menyalin informasi kontak
 - **Modal Popups**: Klik logo atau badge ISO untuk informasi detail
 
@@ -54,10 +55,12 @@ epbox-vcard.html
 
 ```
 epbox-vcard/
-├── epbox-vcard.html      # File HTML utama
-├── epbox-vcard.css       # Styling dan animasi
-├── epbox-vcard.js        # Interaktivitas dan fungsi
-└── README.md            # Dokumentasi ini
+├── epbox-vcard.html          # File HTML utama
+├── epbox-vcard.css           # Styling dan animasi
+├── epbox-vcard.js            # Interaktivitas dan fungsi
+├── epbox-vcard-plus.html     # Versi Plus dengan fitur tambahan
+├── epbox-vcard-plus.css      # Styling untuk versi Plus
+└── README.md                 # Dokumentasi ini
 ```
 
 ## 🎨 Kustomisasi
@@ -67,13 +70,16 @@ Edit bagian berikut di `epbox-vcard.html`:
 
 ```html
 <!-- Telepon -->
-<a href="tel:+6281170088989" class="contact-link">+62 811 7008 8989</a>
+<a href="https://wa.me/6285175052607?text=Hello%20EPBOX%20ENGINEERING%2C%20I%27d%20like%20to%20get%20in%20touch." class="contact-link">+62 811 1112 9835</a>
 
 <!-- Email -->
-<a href="mailto:sales@epbox-engg.com" class="contact-link">sales@epbox-engg.com</a>
+<a href="mailto:erping@epbox-engg.com?subject=Inquiry%20-%20EPBOX%20ENGINEERING&body=Hello%20EPBOX%20ENGINEERING%2C%20I%27d%20like%20to%20get%20in%20touch%20about..." class="contact-link">erping@epbox-engg.com</a>
 
 <!-- Alamat -->
-<a href="https://maps.google.com/?q=1+Sunview+Road+Ecotech@Sunview+%2306-39+Singapore+627615" target="_blank" class="contact-link">
+<a href="https://maps.app.goo.gl/XvGmQaDwxwCqbVcZ9" class="contact-link">1 Sunview Roadf Ecotect@sunview Singapore 627615</a>
+
+<!-- Website -->
+<a href="https://www.linkedin.com/company/epbox-engineering/posts/?feedView=all" class="contact-link">https://epbox-engg.com</a>
 ```
 
 ### Mengubah Warna
@@ -135,6 +141,11 @@ animation-duration: 2s;
 - **Smooth Movement**: Pergerakan yang halus dan natural
 - **Performance Optimized**: Efek yang tidak membebani browser
 
+### Versi Plus
+- **Dark Mode**: Toggle tema gelap/terang
+- **Enhanced Animations**: Animasi yang lebih halus
+- **Interactive Hints**: Petunjuk interaksi yang otomatis hilang
+
 ## 🚀 Deployment
 
 ### Local Development
@@ -163,9 +174,9 @@ php -S localhost:8000
 ## 📞 Support
 
 Untuk pertanyaan atau masalah:
-- Email: sales@epbox-engg.com
-- Phone: +62 811 7008 8989
-- Address: 1 Sunview Road, Ecotech@Sunview #06-39, Singapore 627615
+- Email: erping@epbox-engg.com
+- Phone: +62 811 1112 9835
+- Address: 1 Sunview Roadf Ecotect@sunview Singapore 627615
 
 ## 📄 License
 
