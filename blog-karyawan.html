@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Explorer - Muhammad Dody | Director</title>
+    <link rel="stylesheet" href="blog-karyawan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="file-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-folder-open folder-icon"></i>
+                    <div class="logo-text">
+                        <h1>Raptish Corp</h1>
+                        <p>Employee Directory</p>
+                    </div>
+                </div>
+                <nav class="file-nav">
+                    <a href="#" class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-info-circle"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="file-main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <i class="fas fa-folder"></i>
+                <span>Home</span>
+                <i class="fas fa-chevron-right"></i>
+                <span>Employees</span>
+                <i class="fas fa-chevron-right"></i>
+                <span class="current">Muhammad Dody</span>
+            </div>
+
+            <!-- File Grid -->
+            <div class="file-grid">
+                <!-- Profile Card -->
+                <div class="file-card profile-card">
+                    <div class="card-header">
+                        <i class="fas fa-user-tie card-icon"></i>
+                        <h2>Profile.dody</h2>
+                        <span class="file-type">.profile</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="profile-image">
+                            <img src="https://via.placeholder.com/120x120/1D3557/FFFFFF?text=MD" alt="Muhammad Dody">
+                            <div class="status-badge online"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h3>Muhammad Dody</h3>
+                            <p class="position">Director</p>
+                            <p class="department">Executive Management</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">2.5 MB</span>
+                        <span class="last-modified">Modified: Today</span>
+                    </div>
+                </div>
+
+                <!-- Personal Info Card -->
+                <div class="file-card info-card">
+                    <div class="card-header">
+                        <i class="fas fa-file-alt card-icon"></i>
+                        <h2>Personal_Info.txt</h2>
+                        <span class="file-type">.txt</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong>Education:</strong>
+                                    <p>MBA - Universitas Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Experience:</strong>
+                                    <p>15+ years in Tech Industry</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <strong>Achievement:</strong>
+                                    <p>Best Director 2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">156 KB</span>
+                        <span class="last-modified">Modified: Yesterday</span>
+                    </div>
+                </div>
+
+                <!-- Company Info Card -->
+                <div class="file-card company-card">
+                    <div class="card-header">
+                        <i class="fas fa-building card-icon"></i>
+                        <h2>Company_Profile.pdf</h2>
+                        <span class="file-type">.pdf</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="company-preview">
+                            <h4>Raptish Corporation</h4>
+                            <p>Leading technology company focused on digital transformation solutions.</p>
+                            <div class="company-stats">
+                                <div class="stat">
+                                    <span class="stat-number">500+</span>
+                                    <span class="stat-label">Clients</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2010</span>
+                                    <span class="stat-label">Founded</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">1.2 MB</span>
+                        <span class="last-modified">Modified: 2 days ago</span>
+                    </div>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="file-card contact-card">
+                    <div class="card-header">
+                        <i class="fas fa-address-book card-icon"></i>
+                        <h2>Contact.vcf</h2>
+                        <span class="file-type">.vcf</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>muhammad.dody@raptish.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+62 21 1234 5678</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jakarta Pusat, DKI Jakarta</span>
+                            </div>
+                        </div>
+                        <div class="vcard-preview">
+                            <div class="vcard-info">
+                                <h4>vCard Preview</h4>
+                                <p>Click download to save contact to your device</p>
+                                <div class="vcard-details">
+                                    <span><strong>Name:</strong> Muhammad Dody</span>
+                                    <span><strong>Title:</strong> Director</span>
+                                    <span><strong>Company:</strong> Raptish Corporation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">89 KB</span>
+                        <span class="last-modified">Modified: 1 week ago</span>
+                    </div>
+                </div>
+
+                <!-- Skills Card -->
+                <div class="file-card skills-card">
+                    <div class="card-header">
+                        <i class="fas fa-code card-icon"></i>
+                        <h2>Skills.json</h2>
+                        <span class="file-type">.json</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="skills-grid">
+                            <div class="skill-tag">Leadership</div>
+                            <div class="skill-tag">Strategy</div>
+                            <div class="skill-tag">Digital Transformation</div>
+                            <div class="skill-tag">Business Development</div>
+                            <div class="skill-tag">Team Management</div>
+                            <div class="skill-tag">Innovation</div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">45 KB</span>
+                        <span class="last-modified">Modified: 3 days ago</span>
+                    </div>
+                </div>
+
+                <!-- Projects Card -->
+                <div class="file-card projects-card">
+                    <div class="card-header">
+                        <i class="fas fa-folder-open card-icon"></i>
+                        <h2>Projects/</h2>
+                        <span class="file-type">folder</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="project-preview">
+                            <div class="project-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>Digital Transformation 2024</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Revenue Growth Strategy</span>
+                            </div>
+                            <div class="project-item">
+                                <i class="fas fa-users"></i>
+                                <span>Team Expansion</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="file-size">3 items</span>
+                        <span class="last-modified">Modified: Today</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="downloadVCard()">
+                        <i class="fas fa-download"></i>
+                        <span>Download vCard</span>
+                    </button>
+                    <button class="action-btn" onclick="shareProfile()">
+                        <i class="fas fa-share"></i>
+                        <span>Share Profile</span>
+                    </button>
+                    <button class="action-btn" onclick="printProfile()">
+                        <i class="fas fa-print"></i>
+                        <span>Print</span>
+                    </button>
+                    <button class="action-btn" onclick="editProfile()">
+                        <i class="fas fa-edit"></i>
+                        <span>Edit</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- vCard Information -->
+            <div class="vcard-section">
+                <div class="vcard-info-card">
+                    <h3><i class="fas fa-id-card"></i> vCard Information</h3>
+                    <p>vCard adalah format standar untuk menyimpan dan bertukar informasi kontak digital. Klik tombol "Download vCard" di atas untuk menyimpan kontak Muhammad Dody ke perangkat Anda.</p>
+                    <div class="vcard-features">
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Kompatibel dengan semua smartphone</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-envelope"></i>
+                            <span>Bisa dibagikan via email</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Bisa dikonversi ke QR Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="file-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <i class="fas fa-folder"></i>
+                    <span>Raptish Corporation © 2025</span>
+                </div>
+                <div class="footer-stats">
+                    <span><i class="fas fa-users"></i> 150+ Employees</span>
+                    <span><i class="fas fa-globe"></i> Global Presence</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for vCard functionality -->
+    <script>
+        function downloadVCard() {
+            // vCard content untuk Muhammad Dody
+            const vcardContent = `BEGIN:VCARD
+VERSION:3.0
+FN:Muhammad Dody
+N:Dody;Muhammad;;;
+ORG:Raptish Corporation
+TITLE:Director
+TEL;TYPE=WORK:+62-21-1234-5678
+TEL;TYPE=CELL:+62-21-1234-5678
+EMAIL;TYPE=WORK:muhammad.dody@raptish.com
+ADR;TYPE=WORK:;;Jl. Sudirman No. 123;Jakarta Pusat;DKI Jakarta;12345;Indonesia
+URL:https://raptish.com
+NOTE:Director at Raptish Corporation. 15+ years experience in technology industry.
+REV:2025-01-01T00:00:00Z
+END:VCARD`;
+
+            // Create blob dan download
+            const blob = new Blob([vcardContent], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Muhammad_Dody.vcf';
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+
+            // Show success message
+            showNotification('vCard berhasil di-download!', 'success');
+        }
+
+        function shareProfile() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Muhammad Dody - Director at Raptish Corporation',
+                    text: 'Check out the profile of Muhammad Dody, Director at Raptish Corporation',
+                    url: window.location.href
+                }).then(() => {
+                    showNotification('Profile berhasil dibagikan!', 'success');
+                }).catch((error) => {
+                    showNotification('Gagal membagikan profile', 'error');
+                });
+            } else {
+                // Fallback untuk browser yang tidak support Web Share API
+                copyToClipboard(window.location.href);
+                showNotification('Link profile berhasil disalin ke clipboard!', 'success');
+            }
+        }
+
+        function printProfile() {
+            window.print();
+        }
+
+        function editProfile() {
+            showNotification('Fitur edit profile akan segera tersedia!', 'info');
+        }
+
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            `;
+
+            // Add to page
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+
+            // Hide and remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Add notification styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .notification {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                transform: translateX(400px);
+                transition: transform 0.3s ease;
+                z-index: 10000;
+                max-width: 300px;
+            }
+            .notification.show {
+                transform: translateX(0);
+            }
+            .notification-success {
+                border-left: 4px solid #28A745;
+                color: #28A745;
+            }
+            .notification-error {
+                border-left: 4px solid #DC3545;
+                color: #DC3545;
+            }
+            .notification-info {
+                border-left: 4px solid #17A2B8;
+                color: #17A2B8;
+            }
+            .notification i {
+                font-size: 1.2em;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+</body>
+</html>
