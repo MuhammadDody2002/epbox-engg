@@ -28,6 +28,22 @@ body {
 .vcard:hover { transform: translateY(-6px); box-shadow: 0 28px 80px rgba(0,0,0,0.15); transition: .25s ease; }
 
 .left-section { flex: 1; background: #1a365d; display: flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
+/* Subtle white blurred gradients in corners for elegant glow */
+.left-section::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(200px 160px at 12% 14%, rgba(255,255,255,0.12), rgba(255,255,255,0.00) 62%),
+    radial-gradient(160px 120px at 88% 86%, rgba(255,255,255,0.08), rgba(255,255,255,0.00) 60%);
+  filter: blur(3px);
+  opacity: .55;
+}
+/* Make sure logo sits above the glow */
+.logo-wrap{ position: relative; z-index: 1; }
+/* Dark mode tuning: slightly dim the glow */
+body.dark .left-section::before{ opacity: .45; }
 .logo-wrap { display: flex; align-items: center; justify-content: center; }
 .logo-image { max-width: 220px; height: auto; display: block; animation: zoomIn .5s ease-out .05s both; }
 
