@@ -138,7 +138,7 @@ body.dark .person-title { color:#94a3b8; }
 .contact-qr-row {
   display: flex;
   align-items: flex-start;
-  gap: 30px;
+  gap: 20px;
   z-index: 2;
 }
 
@@ -147,12 +147,16 @@ body.dark .person-title { color:#94a3b8; }
   z-index: 2; 
 }
 
-.contact-item { display:flex; align-items:center; gap:12px; margin-bottom:8px; padding:8px 10px; border-radius:8px; transition:.25s ease; cursor:pointer; outline:none; }
-.contact-item:hover { background: rgba(26,54,93,.1); transform: translateX(6px); }
-.contact-item i { color:#1a365d; width:18px; text-align:center; }
-.contact-link { color:#1a365d; font-weight:500; text-decoration:none; }
-body.dark .contact-item:hover { background: rgba(148,163,184,.15); }
-body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
+/* ISO Badge Container - overlay inside QR section */
+.iso-badge-container {
+  position: absolute;
+  /* raise into shadow grid and center over QR image */
+  top: -100px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  z-index: 10;
+}
 
 /* QR Code Side */
 .qr-code-side {
@@ -167,6 +171,7 @@ body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
   border: 1px solid rgba(26, 54, 93, 0.1);
   transition: all 0.3s ease;
   animation: revealUp .45s ease-out .48s both;
+  position: relative;
 }
 
 .qr-code-side:hover {
@@ -175,6 +180,13 @@ body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(26, 54, 93, 0.1);
 }
+
+.contact-item { display:flex; align-items:center; gap:12px; margin-bottom:8px; padding:8px 10px; border-radius:8px; transition:.25s ease; cursor:pointer; outline:none; }
+.contact-item:hover { background: rgba(26,54,93,.1); transform: translateX(6px); }
+.contact-item i { color:#1a365d; width:18px; text-align:center; }
+.contact-link { color:#1a365d; font-weight:500; text-decoration:none; }
+body.dark .contact-item:hover { background: rgba(148,163,184,.15); }
+body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
 
 .qr-code-image {
   width: 120px;
@@ -226,6 +238,17 @@ body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
 .save-contact-btn:focus {
   outline: 2px solid #1a365d;
   outline-offset: 2px;
+}
+
+/* Dark mode for ISO Badge Side */
+body.dark .iso-badge-side {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .iso-badge-side:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Dark mode for QR Code */
@@ -341,6 +364,95 @@ body.dark .quick-actions { background: rgba(255,255,255,.06); }
 body.dark .qr-img { background:#0b1220; }
 body.dark .qr-caption { color:#94a3b8; }
 
+/* ISO Badge */
+.iso-badge {
+    width: 90px;
+    height: 90px;
+    background: #1a365d;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: badgeGlow 2s ease-in-out infinite;
+    z-index: 3;
+}
+
+@keyframes badgeGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(26, 54, 93, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(26, 54, 93, 0.6); }
+}
+
+.iso-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: rgba(26, 54, 93, 0.3);
+}
+
+.badge-content {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.badge-top, .badge-bottom {
+    font-size: 9px;
+    opacity: 0.8;
+}
+
+.badge-main {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px 0;
+}
+
+/* Decorative Dots */
+.dots {
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+    position: relative;
+}
+
+.dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.bottom-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.bottom-dots span {
+    background: white;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+.bottom-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.bottom-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes dotPulse {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
 .border-strip { position:absolute; left:0; right:0; height:4px; background:#1a365d; z-index:3; }
 .top-strip { top:0; }
 .bottom-strip { bottom:0; }
@@ -362,14 +474,56 @@ body.dark .qr-caption { color:#94a3b8; }
   .person-title { font-size:12px; }
   .contact-link { font-size:14px; }
   
+  /* Mobile ISO Badge next to QR (right side) */
+  .iso-badge-container {
+    top: 56%;
+    left: calc(100% + 10px);
+    right: auto;
+    transform: translateY(-50%);
+  }
+
+  .iso-badge {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .badge-content {
+    font-size: 12px;
+  }
+  
+  .badge-top, .badge-bottom {
+    font-size: 9px;
+  }
+  
+  .badge-main {
+    font-size: 14px;
+  }
+  
+  /* Mobile Decorative Dots */
+  .bottom-dots {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .dots span {
+    width: 5px;
+    height: 5px;
+  }
+  
   /* Mobile Contact + QR Layout */
   .contact-qr-row {
     flex-direction: column;
     gap: 20px;
   }
   
+  .iso-badge-container {
+    top: 15px;
+    right: 15px;
+  }
+  
   .qr-code-side {
     padding: 16px;
+    position: relative;
   }
   
   .qr-code-image {
@@ -391,6 +545,195 @@ body.dark .qr-caption { color:#94a3b8; }
     left: 10px;
     max-width: none;
   }
+
+  /* Mobile ISO Modal */
+  .iso-modal-content {
+    margin: 10% auto;
+    width: 95%;
+    max-width: none;
+  }
+
+  .iso-modal-header {
+    padding: 16px 20px;
+  }
+
+  .iso-modal-header h3 {
+    font-size: 16px;
+  }
+
+  .iso-modal-body {
+    padding: 20px;
+  }
+
+  .iso-description {
+    font-size: 14px;
+  }
+
+  .iso-benefits h4 {
+    font-size: 15px;
+  }
+
+  .iso-benefits li {
+    font-size: 13px;
+  }
+}
+
+/* ISO Modal */
+.iso-modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.iso-modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 0.3s ease-out;
+  overflow: hidden;
+}
+
+.iso-modal-header {
+  background: linear-gradient(135deg, #1a365d 0%, #2d5aa0 100%);
+  color: white;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iso-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.iso-modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.iso-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.iso-modal-body {
+  padding: 24px;
+}
+
+.iso-description {
+  color: #374151;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.iso-benefits h4 {
+  color: #1a365d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.iso-benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.iso-benefits li {
+  color: #4b5563;
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.iso-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Dark mode for ISO Modal */
+body.dark .iso-modal-content {
+  background: #1f2937;
+}
+
+body.dark .iso-modal-header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+body.dark .iso-description {
+  color: #d1d5db;
+}
+
+body.dark .iso-benefits h4 {
+  color: #e2e8f0;
+}
+
+body.dark .iso-benefits li {
+  color: #9ca3af;
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Center the "Scan Here" header in QR modal */
+#qrModal .iso-modal-header { 
+  justify-content: center; 
+  position: relative; 
+  text-align: center; 
+}
+#qrModal .iso-modal-header h3 { 
+  width: 100%; 
+}
+#qrModal .iso-modal-close { 
+  position: absolute; 
+  right: 12px; 
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
 
