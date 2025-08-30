@@ -87,11 +87,11 @@
 
                         <img src="images/qrc.png" alt="QR Code vCard" class="qr-code-image" onclick="showQrModal()">
                         
-                        <!-- Save Contact Button -->
-                        <button class="save-contact-btn" onclick="downloadVCard()" aria-label="Download vCard contact">
-                            <i class="fas fa-download"></i>
-                            Save Contact
-                        </button>
+                                                 <!-- Save Contact Button -->
+                         <button class="save-contact-btn" onclick="showVCardPreview()" aria-label="Preview vCard contact">
+                             <i class="fas fa-download"></i>
+                             Save Contact
+                         </button>
                     </div>
                 </div>
 
@@ -121,21 +121,68 @@
                     </div>
                 </div>
 
-                <!-- QR Scan Modal -->
-                <div id="qrModal" class="iso-modal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
-                    <div class="iso-modal-content">
-                        <div class="iso-modal-header">
-                            <h3 id="qrModalTitle">Scan Here</h3>
-                            <button class="iso-modal-close" onclick="closeQrModal()" aria-label="Close modal">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                        <div class="iso-modal-body" style="text-align:center">
-                            <img src="images/qrc.png" alt="QR Code" style="width:220px;height:220px;border-radius:12px;background:#fff;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.1);border:2px solid rgba(26,54,93,.1)">
-                            <p class="iso-description" style="margin-top:12px">Point your camera here to open our contact and save it instantly.</p>
-                        </div>
-                    </div>
-                </div>
+                                 <!-- QR Scan Modal -->
+                 <div id="qrModal" class="iso-modal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+                     <div class="iso-modal-content">
+                         <div class="iso-modal-header">
+                             <h3 id="qrModalTitle">Scan Here</h3>
+                             <button class="iso-modal-close" onclick="closeQrModal()" aria-label="Close modal">
+                                 <i class="fas fa-times"></i>
+                             </button>
+                         </div>
+                         <div class="iso-modal-body" style="text-align:center">
+                             <img src="images/qrc.png" alt="QR Code" style="width:220px;height:220px;border-radius:12px;background:#fff;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.1);border:2px solid rgba(26,54,93,.1)">
+                             <p class="iso-description" style="margin-top:12px">Point your camera here to open our contact and save it instantly.</p>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- vCard Preview Modal -->
+                 <div id="vcardModal" class="iso-modal" role="dialog" aria-modal="true" aria-labelledby="vcardModalTitle">
+                     <div class="iso-modal-content vcard-preview-content">
+                         <div class="iso-modal-header">
+                             <h3 id="vcardModalTitle">Contact Preview</h3>
+                             <button class="iso-modal-close" onclick="closeVCardPreview()" aria-label="Close modal">
+                                 <i class="fas fa-times"></i>
+                             </button>
+                         </div>
+                         <div class="iso-modal-body vcard-preview-body">
+                             <div class="vcard-preview-card">
+                                 <div class="vcard-preview-avatar">
+                                     <div class="vcard-initials">EL</div>
+                                 </div>
+                                 <div class="vcard-preview-info">
+                                     <h4 class="vcard-preview-name">Erping Lee</h4>
+                                     <p class="vcard-preview-title">Director | EPBOX ENGINEERING PTE LTD.</p>
+                                     <div class="vcard-preview-details">
+                                         <div class="vcard-detail-item">
+                                             <i class="fas fa-phone"></i>
+                                             <span>+65 8348 9826</span>
+                                         </div>
+                                         <div class="vcard-detail-item">
+                                             <i class="fas fa-envelope"></i>
+                                             <span>erping@epbox-engg.com</span>
+                                         </div>
+                                         <div class="vcard-detail-item">
+                                             <i class="fas fa-map-marker-alt"></i>
+                                             <span>1 Sunview Roadf Ecotect@sunview Singapore 627615</span>
+                                         </div>
+                                         <div class="vcard-detail-item">
+                                             <i class="fas fa-globe"></i>
+                                             <span>https://epbox-engg.com</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="vcard-preview-actions">
+                                 <button class="vcard-save-btn" onclick="downloadVCard()">
+                                     <i class="fas fa-download"></i>
+                                     Save to Contacts
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
             </div>
 
             <div class="border-strip top-strip"></div>
@@ -242,6 +289,21 @@ END:VCARD`;
         }
     }
 
+    // vCard Preview Modal Functions
+    function showVCardPreview() {
+        const modal = document.getElementById('vcardModal');
+        if (modal) {
+            modal.style.display = 'block';
+        }
+    }
+
+    function closeVCardPreview() {
+        const modal = document.getElementById('vcardModal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
+    }
+
     // QR Modal handlers
     function showQrModal(){
         const qrModal = document.getElementById('qrModal');
@@ -254,13 +316,18 @@ END:VCARD`;
 
     // Close modal when clicking outside the modal content
     window.onclick = function(event) {
-        const modal = document.getElementById('isoModal');
+        const isoModal = document.getElementById('isoModal');
         const qrModal = document.getElementById('qrModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
+        const vcardModal = document.getElementById('vcardModal');
+        
+        if (event.target == isoModal) {
+            isoModal.style.display = 'none';
         }
         if (event.target == qrModal) {
             qrModal.style.display = 'none';
+        }
+        if (event.target == vcardModal) {
+            vcardModal.style.display = 'none';
         }
     }
     </script>
