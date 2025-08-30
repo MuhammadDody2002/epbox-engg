@@ -200,7 +200,7 @@ body.dark .person-title { color:#94a3b8; }
 .contact-item { display:flex; align-items:center; gap:12px; margin-bottom:8px; padding:8px 10px; border-radius:8px; transition:.25s ease; cursor:pointer; outline:none; }
 .contact-item:hover { background: rgba(26,54,93,.1); transform: translateX(6px); }
 .contact-item i { color:#1a365d; width:18px; text-align:center; }
-.contact-link { color:#1a365d; font-weight:500; text-decoration:none; }
+.contact-link { color:#1a365d; font-weight:500; text-decoration:none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 body.dark .contact-item:hover { background: rgba(148,163,184,.15); }
 body.dark .contact-item i, body.dark .contact-link { color:#e2e8f0; }
 

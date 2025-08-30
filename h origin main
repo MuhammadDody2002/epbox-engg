@@ -1,0 +1,5 @@
+[33m44466b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m feat: update ISO badges to use iso2.png image for both Irene and Erping cards
+[33mbe5e951[m[33m ([m[1;31morigin/main[m[33m)[m feat: update contact details and final adjustments
+[33m3e9a0a3[m feat: add vCard preview modal with contact details before download
+[33m87ff3cc[m refactor: rename vCard files to shorter names (irene-card.html, erping-card.html)
+[33m10cb322[m feat: add Erping Lee vCard as Director
