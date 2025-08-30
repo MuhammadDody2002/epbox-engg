@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPBOX ENGINEERING - Irene Tesalonika vCard</title>
+    <title>EPBOX ENGINEERING - Erping Lee vCard</title>
     <link rel="stylesheet" href="irene-vcard-plus.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -46,8 +46,8 @@
 
                 <!-- Identity -->
                 <div class="identity-card">
-                    <div class="person-name">Irene Tesalonika</div>
-                    <div class="person-title">Sales & Marketing | EPBOX ENGINEERING PTE LTD.</div>
+                    <div class="person-name">Erping Lee</div>
+                    <div class="person-title">Director | EPBOX ENGINEERING PTE LTD.</div>
                 </div>
 
                 <!-- Contacts + QR Code Row -->
@@ -56,11 +56,11 @@
                     <div class="contact-info">
                         <div class="contact-item phone" tabindex="0">
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+6285175052607" class="contact-link" aria-label="Call phone">+62 851 7505 2607</a>
+                            <a href="tel:+6583489826" class="contact-link" aria-label="Call phone">+65 8348 9826</a>
                         </div>
                         <div class="contact-item email" tabindex="0">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:irene@epbox-engg.com" class="contact-link" aria-label="Send email">irene@epbox-engg.com</a>
+                            <a href="mailto:erping@epbox-engg.com" class="contact-link" aria-label="Send email">erping@epbox-engg.com</a>
                         </div>
                         <div class="contact-item location" tabindex="0">
                             <i class="fas fa-map-marker-alt"></i>
@@ -153,23 +153,21 @@
         }
     })();
 
-
-
     // Download vCard Function
     function downloadVCard() {
-        // Generate vCard string untuk Irene Tesalonika
+        // Generate vCard string untuk Erping Lee
         const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Irene Tesalonika
-N:Tesalonika;Irene;;;
+FN:Erping Lee
+N:Lee;Erping;;;
 ORG:EPBOX ENGINEERING PTE. LTD.
-TITLE:Sales & Marketing
-TEL;TYPE=WORK:+62-851-7505-2607
-TEL;TYPE=CELL:+62-851-7505-2607
-EMAIL;TYPE=WORK:irene@epbox-engg.com
+TITLE:Director
+TEL;TYPE=WORK:+65-8348-9826
+TEL;TYPE=CELL:+65-8348-9826
+EMAIL;TYPE=WORK:erping@epbox-engg.com
 ADR;TYPE=WORK:;;1 Sunview Roadf Ecotect@sunview;Singapore;Singapore;627615;Singapore
 URL:https://epbox-engg.com
-NOTE:Marketing Staff at EPBOX ENGINEERING PTE LTD.
+NOTE:Director at EPBOX ENGINEERING PTE. LTD. - Beyond Boundaries, We Command Control
 REV:${new Date().toISOString().split('T')[0]}T00:00:00Z
 END:VCARD`;
 
@@ -179,7 +177,7 @@ END:VCARD`;
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'irene-tesalonika-contact.vcf';
+            link.download = 'erping-lee-contact.vcf';
             
             // Trigger download
             document.body.appendChild(link);
@@ -219,8 +217,7 @@ END:VCARD`;
         `;
 
         // Add to body
-        document.body.appendChild
-        (notification);
+        document.body.appendChild(notification);
 
         // Auto remove after 3 seconds
         setTimeout(() => {
@@ -245,18 +242,6 @@ END:VCARD`;
         }
     }
 
-    // Close modal when clicking outside the modal content
-    window.onclick = function(event) {
-        const modal = document.getElementById('isoModal');
-        const qrModal = document.getElementById('qrModal');
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-        if (event.target == qrModal) {
-            qrModal.style.display = 'none';
-        }
-    }
-
     // QR Modal handlers
     function showQrModal(){
         const qrModal = document.getElementById('qrModal');
@@ -267,26 +252,15 @@ END:VCARD`;
         if (qrModal) qrModal.style.display = 'none';
     }
 
-    // QR Scan Modal Functions
-    function showQrModal() {
-        const modal = document.getElementById('qrModal');
-        if (modal) {
-            modal.style.display = 'block';
-        }
-    }
-
-    function closeQrModal() {
-        const modal = document.getElementById('qrModal');
-        if (modal) {
-            modal.style.display = 'none';
-        }
-    }
-
     // Close modal when clicking outside the modal content
     window.onclick = function(event) {
-        const modal = document.getElementById('qrModal');
+        const modal = document.getElementById('isoModal');
+        const qrModal = document.getElementById('qrModal');
         if (event.target == modal) {
             modal.style.display = 'none';
+        }
+        if (event.target == qrModal) {
+            qrModal.style.display = 'none';
         }
     }
     </script>
